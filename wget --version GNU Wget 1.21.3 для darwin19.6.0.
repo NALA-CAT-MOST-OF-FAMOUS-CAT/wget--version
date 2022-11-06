@@ -1,0 +1,31 @@
+wget --version
+GNU Wget 1.21.3 для darwin19.6.0.
+
+-cares +digest -gpgme +https +ipv6 +iri +large-file -metalink +nls
++ntlm +opie -psl +ssl/openssl
+
+Wgetrc:
+    /usr/local/etc/wgetrc (система)
+Локаль:
+    /usr/local/Cellar/wget/1.21.3/share/locale
+Компиляция:
+    clang -DHAVE_CONFIG_H -DSYSTEM_WGETRC="/usr/local/etc/wgetrc"
+    -DLOCALEDIR="/usr/local/Cellar/wget/1.21.3/share/locale" -I.
+    -I../lib -I../lib -I/usr/local/opt/openssl@1.1/include
+    -I/usr/local/Cellar/libidn2/2.3.2/include -DNDEBUG -g -O2
+Ссылка:
+    clang -I/usr/local/Cellar/libidn2/2.3.2/include -DNDEBUG -g -O2
+    -L/usr/local/Cellar/libidn2/2.3.2/lib -lidn2
+    -L/usr/local/opt/openssl@1.1/lib -lssl -lcrypto -ldl -lz
+    ../lib/libgnu.a -liconv -lintl -Wl,-framework -Wl,CoreFoundation
+    -lunistring
+
+Copyright (C) 2015 Free Software Foundation, Inc.
+Лицензия GPLv3+: GNU GPL версии 3 или старше
+<http://www.gnu.org/licenses/gpl.html>.
+Это свободное программное обеспечение: его можно свободно изменять
+и распространять дальше.
+Ничего НЕ ГАРАНТИРУЕТСЯ, в пределах, ограниченных законом.
+
+Автор оригинальной версии: Hrvoje Niksic <hniksic@xemacs.org>.
+Сообщения об ошибках и вопросы отправляйте на <bug-wget@gnu.org>.
